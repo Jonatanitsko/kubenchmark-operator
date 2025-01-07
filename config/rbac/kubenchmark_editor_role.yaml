@@ -1,0 +1,27 @@
+# permissions for end users to edit kubenchmarks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: kubenchmark-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: kubenchmark-editor-role
+rules:
+- apiGroups:
+  - testing.testing.com
+  resources:
+  - kubenchmarks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - testing.testing.com
+  resources:
+  - kubenchmarks/status
+  verbs:
+  - get

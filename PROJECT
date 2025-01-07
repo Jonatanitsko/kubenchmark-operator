@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4
 projectName: kubenchmark-operator
 repo: kubenchmark-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: testing.com
+  group: testing
+  kind: Kubenchmark
+  path: kubenchmark-operator/api/v2
+  version: v2
 version: "3"
